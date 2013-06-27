@@ -1,0 +1,45 @@
+{
+  "name": "prangler",
+  "description": "AngularJS template preloader. Load your html partials with your scripts.",
+  "version": "0.0.1",
+  "homepage": "https://github.com/sulmanen/prangler",
+  "author": {
+    "name": "Samuli Ulmanen",
+    "email": "samuli.ulmanen@iki.fi"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sulmanen/prangler.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sulmanen/prangler/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/sulmanen/prangler/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "Gruntfile.js",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "dependencies": {
+    "string": "~1.4.0"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.1.1",
+    "grunt-contrib-clean": "~0.4.0",
+    "grunt-contrib-nodeunit": "~0.1.2",
+    "grunt": "~0.4.1"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.1"
+  },
+  "keywords": [
+    "gruntplugin"
+  ]
+}
