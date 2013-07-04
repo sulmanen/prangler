@@ -9,13 +9,11 @@
 'use strict';
 
 module.exports = function(grunt) {
-
-  grunt.registerMultiTask('prangler', 'Collect html templates and views to $templateCache.', function() {
-    var str = require('string');
+  grunt.registerTask('prangler', 'Collect html templates and views to $templateCache.', function() {
     var templatePaths = [], targets = [], globs = [];
     var configTemplate = "angular.module('<%= ngApp %>').run(['$templateCache', function($templateCache) {<%= loadScripts %>}]);";
     var putTemplate = "$templateCache.put('<%= key %>', '<%= template %>');\n";
-    
+    var str = require('string');
 
     grunt.config.requires('prangler');
     grunt.config.requires('prangler.options.ngApp');
@@ -39,13 +37,13 @@ module.exports = function(grunt) {
           template: str(grunt.file.read(templatePaths[path])).collapseWhitespace().replace(/([^'\\]*(?:\\.[^'\\]*)*)'/g, "$1\\'")
         };
       grunt.log.writeln(temp.key);
-      loadScripts = loadScripts + grunt.template.process(putTemplate, temp);
+      loadScripts = loadScripts + grunt.template.process(putTemplate, {data: temp});
     }
 
-    grunt.file.write(targets[0], grunt.template.process(configTemplate, {
+    grunt.file.write(targets[0], grunt.template.process(configTemplate, {data: {
       ngApp: grunt.config('prangler.options.ngApp'),
       loadScripts: loadScripts
-    }));
+    }}));
 
     grunt.log.ok(targets[0] + ' has ' + templatePaths.length + ' templates.');
   });
