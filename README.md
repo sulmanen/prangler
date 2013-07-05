@@ -63,7 +63,7 @@ grunt.initConfig({
       stripPathForTemplateId: ''
     },
     files: {
-      'dest/template.js': ['src/templates/*.html],
+      'dest/template.js': ['src/templates/*.html'],
     }
   }
 })
