@@ -18,7 +18,7 @@ module.exports = function (grunt) {
     grunt.config.requires('prangler.options.ngApp');
     grunt.config.requires('prangler.files');
     
-    grunt.log.subhead('Collect templates for ngApp ' + grunt.config('prangler.options.ngApp') + '\n');
+    grunt.log.subhead('Collect templates for AngularJS module \'' + grunt.config('prangler.options.ngApp') + '\'\n');
     
     var filesConfig = grunt.config('prangler.files');
 
