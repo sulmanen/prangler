@@ -30,7 +30,7 @@ grunt.initConfig({
       stripPathForTemplateId: 'src' // will remove src from the $templcateCache key  
     },
     files: {
-      'dest/template.js': ['src/templates/*.html],
+      'dest/template.js': ['src/templates/*.html'],
     }
   },
 })
