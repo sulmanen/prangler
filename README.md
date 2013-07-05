@@ -1,6 +1,6 @@
 # prangler
 
-> AngularJS template preloader. Load your html partials with your scripts.
+> AngularJS template preloader. Load your html partials with your scripts. Reduce http requests, improve load time for views and directives with templates.
 
 ## Getting Started
 This plugin requires Grunt `~0.4.1`
@@ -38,17 +38,19 @@ grunt.initConfig({
 
 ### Options
 
-#### options.separator
+#### options.ngApp
 Type: `String`
 Default value: `',  '`
 
-A string value that is used to do something with whatever.
+Name of your AngularJS module.
 
-#### options.punctuation
+#### options.stripPathForTemplateId
 Type: `String`
-Default value: `'.'`
+Default value: `''`
 
-A string value that is used to do something else with whatever else.
+Remove this String from beginning of template uris when store in AngularJS $templateCache.
+
+If html partial is in src/templates/ and stripPathForTemplateId is set to 'src', the template will be stored to AngularJS $templateCache with key/uri templates/my-template.html
 
 ### Usage Examples
 
