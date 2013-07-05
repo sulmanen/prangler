@@ -23,26 +23,18 @@ var grunt = require('grunt');
 */
 
 exports.prangler = {
-  setUp: function(done) {
+  setUp: function (done) {
     // setup here if necessary
     done();
   },
-  default_options: function(test) {
+  defaultOptions: function (test) {
     test.expect(1);
 
-    var actual = grunt.file.read('tmp/default_options');
-    var expected = grunt.file.read('test/expected/default_options');
-    test.equal(actual, expected, 'should describe what the default behavior is.');
+    var actual = grunt.file.read('tmp/template.js');
+    var expected = grunt.file.read('test/expected/template.js');
+
+    test.equal(actual, expected, 'adds name.html and value.html to $templateCache.');
 
     test.done();
-  },
-  custom_options: function(test) {
-    test.expect(1);
-
-    var actual = grunt.file.read('tmp/custom_options');
-    var expected = grunt.file.read('test/expected/custom_options');
-    test.equal(actual, expected, 'should describe what the custom option(s) behavior is.');
-
-    test.done();
-  },
+  }
 };

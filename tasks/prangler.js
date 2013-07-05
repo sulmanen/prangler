@@ -5,11 +5,10 @@
  * Copyright (c) 2013 Samuli Ulmanen
  * Licensed under the MIT license.
  */
-
 'use strict';
 
-module.exports = function(grunt) {
-  grunt.registerTask('prangler', 'Collect html templates and views to $templateCache.', function() {
+module.exports = function (grunt) {
+  grunt.registerTask('prangler', 'Collect html templates and views to $templateCache.', function () {
     var templatePaths = [], targets = [], globs = [];
     var configTemplate = "angular.module('<%= ngApp %>').run(['$templateCache', function($templateCache) {<%= loadScripts %>}]);";
     var putTemplate = "$templateCache.put('<%= key %>', '<%= template %>');\n";
@@ -28,14 +27,14 @@ module.exports = function(grunt) {
       globs.push(filesConfig[key]);
     }
 
-    templatePaths = grunt.file.expand(globs[0]); 
+    templatePaths = grunt.file.expand(globs[0]);
   
     var loadScripts = '';
     for (var path in templatePaths) {
-        var temp = {
-          key: templatePaths[path].replace(grunt.config('prangler.options.stripPathForTemplateId'),'').replace('\\', '/'),
-          template: str(grunt.file.read(templatePaths[path])).collapseWhitespace().replace(/([^'\\]*(?:\\.[^'\\]*)*)'/g, "$1\\'")
-        };
+      var temp = {
+        key: templatePaths[path].replace(grunt.config('prangler.options.stripPathForTemplateId'), '').replace('\\', '/'),
+        template: str(grunt.file.read(templatePaths[path])).collapseWhitespace().replace(/([^'\\]*(?:\\[\s\S][^'\\]*)*)'/g, "$1\\'")
+      };
       grunt.log.writeln(temp.key);
       loadScripts = loadScripts + grunt.template.process(putTemplate, {data: temp});
     }
