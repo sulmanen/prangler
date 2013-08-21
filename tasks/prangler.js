@@ -8,7 +8,7 @@
 'use strict';
 
 module.exports = function (grunt) {
-  grunt.registerTask('prangler', 'Collect html templates and views to AngularJS $templateCache.', function () {
+  grunt.registerTask('grunt-angular-prangler', 'Collect html templates and views to AngularJS $templateCache.', function () {
     var templatePaths = [], targets = [], globs = [];
     var configTemplate = "angular.module('<%= ngApp %>').run(['$templateCache', function($templateCache) {<%= loadScripts %>}]);";
     var putTemplate = "$templateCache.put('<%= key %>', '<%= template %>');\n";

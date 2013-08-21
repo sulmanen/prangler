@@ -14,7 +14,7 @@ npm install prangler --save-dev
 Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
 
 ```js
-grunt.loadNpmTasks('prangler');
+grunt.loadNpmTasks('grunt-angular-prangler');
 ```
 
 ## The "prangler" task
@@ -76,3 +76,4 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Release History
 0.0.1 Pack html partials to $templateCache and automatically strip whitespace.
+0.0.2 Rename plugin and task to grunt-angular-prangler for better visibility

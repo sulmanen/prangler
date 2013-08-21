@@ -37,14 +37,14 @@ module.exports = function (grunt) {
         files: {
           'tmp/template.js': ['test/fixtures/name.html', 'test/fixtures/value.html']
         }
-    },
+      },
 
-    // Unit tests.
-    nodeunit: {
-      tests: ['test/*_test.js']
-    }
+      // Unit tests.
+      nodeunit: {
+        tests: ['test/*_test.js']
+      }
 
-  });
+    });
 
   // Actually load this plugin's task(s).
   grunt.loadTasks('tasks');
@@ -56,7 +56,7 @@ module.exports = function (grunt) {
 
   // Whenever the "test" task is run, first clean the "tmp" dir, then run this
   // plugin's task(s), then test the result.
-  grunt.registerTask('test', ['clean', 'prangler:noStripPath', 'nodeunit']);
+  grunt.registerTask('test', ['clean', 'grunt-angular-prangler', 'nodeunit']);
 
   // By default, lint and run all tests.
   grunt.registerTask('default', ['jshint']);
