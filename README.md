@@ -77,3 +77,4 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 ## Release History
 0.0.1 Pack html partials to $templateCache and automatically strip whitespace.
 0.0.2 Rename plugin and task to grunt-angular-prangler for better visibility
+0.0.3 Reverted to old name "prangler" as the actual task name.
