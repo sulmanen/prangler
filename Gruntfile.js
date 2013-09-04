@@ -30,6 +30,7 @@ module.exports = function (grunt) {
 
     // Configuration to be run (and then tested).
     prangler: {
+      test: {
         options: {
           ngApp: 'myApp',
           stripPathForTemplateId: ''
@@ -37,14 +38,15 @@ module.exports = function (grunt) {
         files: {
           'tmp/template.js': ['test/fixtures/name.html', 'test/fixtures/value.html']
         }
-      },
-
-      // Unit tests.
-      nodeunit: {
-        tests: ['test/*_test.js']
       }
+    },
 
-    });
+    // Unit tests.
+    nodeunit: {
+      tests: ['test/*_test.js']
+    }
+
+  });
 
   // Actually load this plugin's task(s).
   grunt.loadTasks('tasks');

@@ -25,12 +25,14 @@ In your project's Gruntfile, add a section named `prangler` to the data object p
 ```js
 grunt.initConfig({
   prangler: {
-    options: {
-      ngApp: 'myApp', // name of your angular module
-      stripPathForTemplateId: 'src' // will remove src from the $templcateCache key  
-    },
-    files: {
-      'dest/template.js': ['src/templates/*.html'],
+    default: {
+      options: {
+        ngApp: 'myApp', // name of your angular module
+        stripPathForTemplateId: 'src' // will remove src from the $templcateCache key  
+      },
+      files: {
+        'dest/template.js': ['src/templates/*.html'],
+      }
     }
   },
 })
@@ -60,12 +62,14 @@ Add templates to dest/templates.js from src/template/*.html. Whitespace will be 
 ```js
 grunt.initConfig({
   prangler: {
-    options: {
-      ngApp: 'myApp',
-      stripPathForTemplateId: ''
-    },
-    files: {
-      'dest/template.js': ['src/templates/*.html'],
+    default: {
+      options: {
+        ngApp: 'myApp',
+        stripPathForTemplateId: ''
+      },
+      files: {
+        'dest/template.js': ['src/templates/*.html'],
+      }
     }
   }
 })
