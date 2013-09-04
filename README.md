@@ -1,5 +1,5 @@
 # prangler
-
+[![Build Status](https://travis-ci.org/sulmanen/prangler.png?branch=master)](https://travis-ci.org/sulmanen/prangler)  
 > AngularJS template preloader. Load your html partials with your scripts. Reduce http requests, improve load time for views and directives with templates.
 
 ## Getting Started
