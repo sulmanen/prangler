@@ -79,6 +79,7 @@ grunt.initConfig({
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
-0.0.1 Pack html partials to $templateCache and automatically strip whitespace.
-0.0.2 Rename plugin and task to grunt-angular-prangler for better visibility
-0.0.3 Reverted to old name "prangler" as the actual task name.
+0.0.1 Pack html partials to $templateCache and automatically strip whitespace.  
+0.0.2 Rename plugin and task to grunt-angular-prangler for better visibility  
+0.0.3 Reverted to old name "prangler" as the actual task name.  
+0.1.0 Grunt files support.
