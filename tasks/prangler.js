@@ -10,8 +10,7 @@
 module.exports = function (grunt) {
   grunt.registerMultiTask('prangler', 'Collect html templates and views to AngularJS $templateCache.', function () {
     var configTemplate = "angular.module('<%= ngApp %>').run(['$templateCache', function($templateCache) {<%= generatedScript %>}]);";
-    var putTemplate = "$templateCache.put('<%= key %>', '<%= template %>');\n";
-    var str = require('string');
+    var putTemplate = "$templateCache.put('<%= key %>', <%= template %>);\n";
 
     var options = this.options({
       ngApp: 'app',
@@ -24,7 +23,7 @@ module.exports = function (grunt) {
       var generatedScript = template.src.map(function (path) {
         var temp = {
           key: path.replace(options.stripPathForTemplateId, '').replace('\\', '/'),
-          template: str(grunt.file.read(path)).collapseWhitespace().replace(/([^'\\]*(?:\\[\s\S][^'\\]*)*)'/g, "$1\\'")
+          template: JSON.stringify(grunt.file.read(path))
         };
         grunt.log.writeln(temp.key);
         return grunt.template.process(putTemplate, {data: temp});
