@@ -100,4 +100,5 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 0.0.3 Reverted to old name "prangler" as the actual task name.  
 0.1.0 Grunt files support.  
 0.1.1 Improved stringify remove html compressor.   
-0.1.2 Add option for stripping filename extension from template key.
+0.1.2 Add option for stripping filename extension from template key.  
+0.1.3 Add option for using only filename for template key.
