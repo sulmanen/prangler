@@ -19,13 +19,18 @@ module.exports = function (grunt) {
         key = key.replace(/\.[^\/.]+$/, '');
       }
 
+      if (options.filenameForTemplateId) {
+        key = key.replace(/^.*[\\\/]/, '');
+      }
+
       return key;
     };
 
     var options = this.options({
       ngApp: 'app',
       stripPathForTemplateId: '',
-      stripFilenameExtension: false
+      stripFilenameExtension: false,
+      filenameForTemplateId: false
     });
 
     grunt.log.subhead('Collect templates for AngularJS module \'' + options.ngApp + '\'\n');
@@ -36,7 +41,7 @@ module.exports = function (grunt) {
           key: generateKey(options, path),
           template: JSON.stringify(grunt.file.read(path))
         };
-        grunt.log.writeln(temp.key);
+        grunt.log.writeln(path + ' as ' + temp.key);
         return grunt.template.process(putTemplate, {
           data: temp
         });

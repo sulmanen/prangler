@@ -48,6 +48,17 @@ module.exports = function (grunt) {
         files: {
           'tmp/templateStripped.js': ['test/fixtures/name.html', 'test/fixtures/value.html']
         }
+      },
+      filenameTest: {
+        options: {
+          ngApp: 'myApp',
+          stripPathForTemplateId: '',
+          stripFilenameExtension: false,
+          filenameForTemplateId: true
+        },
+        files: {
+          'tmp/templateFilename.js': ['test/fixtures/name.html', 'test/fixtures/value.html']
+        }
       }
     },
 

@@ -28,8 +28,10 @@ grunt.initConfig({
     default: {
       options: {
         ngApp: 'myApp', // name of your angular module
-        stripPathForTemplateId: 'src' // will remove src from the $templcateCache key,
-        stripFilenameExtension: false // if true removes .html from $templateCache key  
+        stripPathForTemplateId: 'src', // will remove src from the $templcateCache key
+        stripFilenameExtension: false, // if true removes .html from $templateCache key
+        filenameForTemplateId: false, // if true template loaded by filename
+
       },
       files: {
         'dest/template.js': ['src/templates/*.html'],
@@ -61,6 +63,12 @@ Default value: false
 
 Remove filename extension from template uris when stored in AngularJS $templateCache.
 If html partial is at src/templates/mytemplate.html, it will be stored to $templateCache with key/uri src/templates/mytemplate
+
+#### options.filenameForTemplateId
+Type: `boolean`
+Default value: false
+
+If true templates are stored in cache by filename and thus can be called in code via filename only. src/templates/mytemplate.html will be stored with mytemplate.html
 
 ### Usage Examples
 

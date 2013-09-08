@@ -45,5 +45,14 @@ exports.prangler = {
 
     test.equal(actual, expected, 'adds name and value to $templateCache.');
     test.done();
+  },
+  fileNameForTemplateId: function (test) {
+    test.expect(1);
+
+    var actual = grunt.file.read('tmp/templateFilename.js');
+    var expected = grunt.file.read('test/expected/templateFilename.js');
+
+    test.equal(actual, expected, 'adds name and value with filename for id to $templateCache.');
+    test.done();
   }
 };
