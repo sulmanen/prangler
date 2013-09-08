@@ -28,7 +28,8 @@ grunt.initConfig({
     default: {
       options: {
         ngApp: 'myApp', // name of your angular module
-        stripPathForTemplateId: 'src' // will remove src from the $templcateCache key  
+        stripPathForTemplateId: 'src' // will remove src from the $templcateCache key,
+        stripFilenameExtension: false // if true removes .html from $templateCache key  
       },
       files: {
         'dest/template.js': ['src/templates/*.html'],
@@ -53,6 +54,13 @@ Default value: `''`
 Remove this String from beginning of template uris when store in AngularJS $templateCache.
 
 If html partial is in src/templates/ and stripPathForTemplateId is set to 'src', the template will be stored to AngularJS $templateCache with key/uri templates/my-template.html
+
+#### options.stripFilenameExtension
+Type: `boolean`
+Default value: false
+
+Remove filename extension from template uris when stored in AngularJS $templateCache.
+If html partial is at src/templates/mytemplate.html, it will be stored to $templateCache with key/uri src/templates/mytemplate
 
 ### Usage Examples
 
@@ -83,4 +91,5 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 0.0.2 Rename plugin and task to grunt-angular-prangler for better visibility.  
 0.0.3 Reverted to old name "prangler" as the actual task name.  
 0.1.0 Grunt files support.  
-0.1.1 Improved stringify remove html compressor. 
+0.1.1 Improved stringify remove html compressor.   
+0.1.2 Add option for stripping filename extension from template key.
