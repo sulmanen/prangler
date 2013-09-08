@@ -42,7 +42,7 @@ grunt.initConfig({
 
 #### options.ngApp
 Type: `String`
-Default value: `',  '`
+Default value: `'app'`
 
 Name of your AngularJS module.
 
