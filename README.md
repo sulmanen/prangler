@@ -57,7 +57,7 @@ If html partial is in src/templates/ and stripPathForTemplateId is set to 'src',
 ### Usage Examples
 
 #### Default Options
-Add templates to dest/templates.js from src/template/*.html. Whitespace will be removed from the html partials.
+Add templates to dest/templates.js from src/template/*.html.
 
 ```js
 grunt.initConfig({
@@ -80,6 +80,7 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Release History
 0.0.1 Pack html partials to $templateCache and automatically strip whitespace.  
-0.0.2 Rename plugin and task to grunt-angular-prangler for better visibility  
+0.0.2 Rename plugin and task to grunt-angular-prangler for better visibility.  
 0.0.3 Reverted to old name "prangler" as the actual task name.  
-0.1.0 Grunt files support.
+0.1.0 Grunt files support.  
+0.1.1 Improved stringify remove html compressor. 

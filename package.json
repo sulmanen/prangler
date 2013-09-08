@@ -1,7 +1,7 @@
 {
   "name": "grunt-angular-prangler",
   "description": "AngularJS template preloader. Load your html partials with your scripts.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/sulmanen/prangler",
   "author": {
     "name": "Samuli Ulmanen",
@@ -38,6 +38,7 @@
     "grunt": "~0.4.1"
   },
   "keywords": [
-    "gruntplugin"
+    "gruntplugin",
+    "angular"
   ]
 }
