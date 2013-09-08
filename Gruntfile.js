@@ -38,6 +38,16 @@ module.exports = function (grunt) {
         files: {
           'tmp/template.js': ['test/fixtures/name.html', 'test/fixtures/value.html']
         }
+      },
+      stripTest: {
+        options: {
+          ngApp: 'myApp',
+          stripPathForTemplateId: '',
+          stripFilenameExtension: true
+        },
+        files: {
+          'tmp/templateStripped.js': ['test/fixtures/name.html', 'test/fixtures/value.html']
+        }
       }
     },
 
@@ -61,6 +71,6 @@ module.exports = function (grunt) {
   grunt.registerTask('test', ['clean', 'prangler', 'nodeunit']);
 
   // By default, lint and run all tests.
-  grunt.registerTask('default', ['jshint']);
+  grunt.registerTask('default', ['jshint', 'test']);
 
 };

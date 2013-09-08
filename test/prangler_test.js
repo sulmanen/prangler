@@ -36,5 +36,14 @@ exports.prangler = {
     test.equal(actual, expected, 'adds name.html and value.html to $templateCache.');
 
     test.done();
+  },
+  removeFileExtension: function (test) {
+    test.expect(1);
+
+    var actual = grunt.file.read('tmp/templateStripped.js');
+    var expected = grunt.file.read('test/expected/templateNoExtension.js');
+
+    test.equal(actual, expected, 'adds name and value to $templateCache.');
+    test.done();
   }
 };
