@@ -9,7 +9,7 @@
 
 module.exports = function (grunt) {
   grunt.registerMultiTask('prangler', 'Collect html templates and views to AngularJS $templateCache.', function () {
-    var configTemplate = "angular.module('<%= ngApp %>').run(['$templateCache', function($templateCache) {<%= generatedScript %>}]);";
+    var configTemplate = "angular.module('<%= ngApp %>').run(['$templateCache', function($templateCache) {\n<%= generatedScript %>}]);";
     var putTemplate = "$templateCache.put('<%= key %>', <%= template %>);\n";
 
     var generateKey = function (options, path) {
